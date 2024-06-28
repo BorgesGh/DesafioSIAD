@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 @Getter
@@ -26,6 +27,13 @@ public class PessoaJuridica extends Pessoa {
         super(nome, dataNascimento);
         this.cnpj = cnpj;
     }
+    public PessoaJuridica(int id, String nome, Date dataNascimento, String cnpj) {
+        this(nome, dataNascimento, cnpj);
+        this.setIdPessoa(id);
+
+    }
+
     public PessoaJuridica() {}
+
 
 }
