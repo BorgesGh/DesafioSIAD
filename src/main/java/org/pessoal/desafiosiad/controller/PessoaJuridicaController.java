@@ -5,9 +5,12 @@ import org.pessoal.desafiosiad.model.PessoaJuridica;
 import org.pessoal.desafiosiad.service.PessoaJuridicaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController("/PessoaJuridica")
 public class PessoaJuridicaController {
@@ -26,6 +29,12 @@ public class PessoaJuridicaController {
         }catch (ConstraintViolationException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
+    }
+
+    @GetMapping("/list")
+    public ResponseEntity<List<PessoaJuridica>> listPessoaJuridica() {
+        List<PessoaJuridica> pjs = pjService.findAll();
+        return ResponseEntity.status(HttpStatus.OK).body(pjs);
     }
 
 }

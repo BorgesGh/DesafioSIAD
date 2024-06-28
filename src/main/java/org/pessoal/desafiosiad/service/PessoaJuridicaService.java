@@ -4,6 +4,8 @@ import org.pessoal.desafiosiad.model.PessoaJuridica;
 import org.pessoal.desafiosiad.repository.PessoaJuridicaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PessoaJuridicaService {
 
@@ -19,5 +21,8 @@ public class PessoaJuridicaService {
         pJRepository.save(pJ);
     }
 
+    public List<PessoaJuridica> findAll() {
+        return pJRepository.findAll();
+    }
 
 }
