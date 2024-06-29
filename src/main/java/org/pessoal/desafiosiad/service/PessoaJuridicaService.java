@@ -1,6 +1,9 @@
 package org.pessoal.desafiosiad.service;
 
+import org.pessoal.desafiosiad.exceptions.CNPJInvalidoException;
+import org.pessoal.desafiosiad.exceptions.NotFindException;
 import org.pessoal.desafiosiad.model.PessoaJuridica;
+import org.pessoal.desafiosiad.model.Produto;
 import org.pessoal.desafiosiad.repository.PessoaJuridicaRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +19,7 @@ public class PessoaJuridicaService {
         this.pJRepository = pessoaJuridicaRepository;
     }
 
-    public void save(PessoaJuridica pJ) {
+    public void save(PessoaJuridica pJ)  {
         //Adicionar regras de negocios...
         //Ex.: Idade > 18
         pJRepository.save(pJ);
@@ -26,36 +29,28 @@ public class PessoaJuridicaService {
         return (List<PessoaJuridica>) pJRepository.findAll();
     }
 
-    public Optional<PessoaJuridica> findById(int id) {
-        return pJRepository.findById(id);
+    public void delete(int id) throws NotFindException {
+        pJRepository.delete(this.findById(id));
     }
 
-    public void delete(int id) throws Exception {
-        Optional<PessoaJuridica> pJ = pJRepository.findById(id);
-        if (pJ.isPresent()) {
-            pJRepository.delete(pJ.get());
-        }
-        else {
-            throw new Exception("Pessoa não encontrada!");
-        }
+    public PessoaJuridica update(int id, PessoaJuridica pJAtualizado) throws NotFindException {
+
+        PessoaJuridica pJ = this.findById(id);
+        pJ.setNome(pJAtualizado.getNome());
+        pJ.setCnpj(pJAtualizado.getCnpj());
+        pJ.setDataNascimento(pJAtualizado.getDataNascimento());
+
+        pJRepository.save(pJ);
+        return pJ;
     }
 
-    public PessoaJuridica update(int id, PessoaJuridica pJAtualizado) {
-        Optional<PessoaJuridica> oPj = pJRepository.findById(id);
-        if(oPj.isPresent()) {
-            PessoaJuridica pJ = oPj.get();
-            pJ.setNome(pJAtualizado.getNome());
-            pJ.setCnpj(pJAtualizado.getCnpj());
-            pJ.setDataNascimento(pJAtualizado.getDataNascimento());
-
-            pJRepository.save(pJ);
-
-            return pJ;
+    public PessoaJuridica findById(int id) throws NotFindException {
+        Optional<PessoaJuridica> pj = pJRepository.findById(id);
+        if (pj.isPresent()) {
+            return pj.get();
         }
-        return null;
-
+        else{
+            throw new NotFindException("Pessoa Juridica não encontrada!");
+        }
     }
-
-
-
 }
