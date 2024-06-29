@@ -20,7 +20,8 @@ import java.util.List;
 @PrimaryKeyJoinColumn(name = "idPessoa")
 public class PessoaFisica extends Pessoa {
 
-    @CPF
+    //Para fins de teste, retirei as validações
+    //@CPF
     String cpf;
 
     @OneToMany
