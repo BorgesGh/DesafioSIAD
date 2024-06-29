@@ -4,7 +4,6 @@ import org.pessoal.desafiosiad.exceptions.NotFindException;
 import org.pessoal.desafiosiad.model.Produto;
 import org.pessoal.desafiosiad.repository.ProdutoRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;

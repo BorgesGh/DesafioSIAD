@@ -1,9 +1,7 @@
 package org.pessoal.desafiosiad.service;
 
-import org.pessoal.desafiosiad.exceptions.CNPJInvalidoException;
 import org.pessoal.desafiosiad.exceptions.NotFindException;
 import org.pessoal.desafiosiad.model.PessoaJuridica;
-import org.pessoal.desafiosiad.model.Produto;
 import org.pessoal.desafiosiad.repository.PessoaJuridicaRepository;
 import org.springframework.stereotype.Service;
 

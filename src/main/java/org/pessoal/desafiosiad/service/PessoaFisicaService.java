@@ -2,14 +2,10 @@ package org.pessoal.desafiosiad.service;
 
 import org.pessoal.desafiosiad.exceptions.CPFInvalidoException;
 import org.pessoal.desafiosiad.exceptions.NotFindException;
-import org.pessoal.desafiosiad.model.Endereco;
 import org.pessoal.desafiosiad.model.PessoaFisica;
-import org.pessoal.desafiosiad.repository.EnderecoRepository;
 import org.pessoal.desafiosiad.repository.PessoaFisicaRepository;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

@@ -1,7 +1,6 @@
 package org.pessoal.desafiosiad.repository;
 
 import org.pessoal.desafiosiad.model.Endereco;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
