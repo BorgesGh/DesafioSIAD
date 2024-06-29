@@ -1,7 +1,9 @@
 package org.pessoal.desafiosiad.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
@@ -9,6 +11,8 @@ import java.util.Date;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Inheritance(strategy = InheritanceType.JOINED) // Optei por esse tipo de herança para evitar campos nulos
 public class Pessoa {
 
@@ -20,10 +24,5 @@ public class Pessoa {
 
     private Date dataNascimento;
 
-    public Pessoa(String nome, Date dataNascimento) {
-        this.nome = nome;
-        this.dataNascimento = dataNascimento;
-    }
 
-    public Pessoa() {}
 }
