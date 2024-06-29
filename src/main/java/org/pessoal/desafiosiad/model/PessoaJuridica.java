@@ -1,6 +1,8 @@
 package org.pessoal.desafiosiad.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrimaryKeyJoinColumn;
@@ -24,6 +26,7 @@ public class PessoaJuridica extends Pessoa {
     //@CNPJ
     private String cnpj;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "procedencia")
     private List<Produto> produtos;
 
