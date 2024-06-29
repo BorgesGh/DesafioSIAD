@@ -1,5 +1,7 @@
 package org.pessoal.desafiosiad.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,6 +27,7 @@ public class Produto {
 
     private double valor;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "idPessoa")
     private PessoaJuridica procedencia;
