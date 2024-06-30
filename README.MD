@@ -12,6 +12,6 @@ em equipe.</p>
 <p><b>http://localhost:8080/swagger-ui/index.html#/</b></p>
 
 <h2>Observação</h2>
-<p>Essa aplicação, no momento que é iniciada, insere alguns valores para algumas todas as classes desejadas. Então experimente listar todos end-points</p>
+<p>Essa aplicação, no momento que é iniciada, insere alguns valores para todas as classes desejadas. Então experimente listar todos end-points</p>
 
 <p>Agradeço a atenção e qualquer dica de melhora estou disponível para ouvir!</p>
