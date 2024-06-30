@@ -18,15 +18,11 @@ import java.util.List;
 @OpenAPIDefinition(
         info = @Info(
                 title = "Desafio Siad",
-                version = "v1.0.0",
+                version = "1.0.0",
                 description = "CRUD realizado para reconhecer a capacitação de inscritos",
-                license = @License(name = "Apache 2.0", url = "http://www.apache.org/licenses/LICENSE-2.0.html"),
                 contact = @Contact(name = "Desenvolvedor: Ghabriel Borges Campi", email = "ghabrielbc@gmail.com")
         )
 )
-
-
-
 @RestController
 @RequestMapping("/api/end")
 @Tag(name = "Controller de Endereço", description = "Controller que contém todos os end-points de acesso para Endereço")
