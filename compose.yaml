@@ -1,0 +1,31 @@
+services:
+  web:
+    container_name: backend.api
+    image: borgesgh/siad:latest
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - bin-network
+    depends_on:
+      - banco-postgres
+    environment:
+      POSTGRES_DB: siad
+      POSTGRES_USER: Ghabriel
+      POSTGRES_PASSWORD: 123
+
+  banco-postgres:
+    container_name: postgres
+    image: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - bin-network
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: Ghabriel
+      POSTGRES_PASSWORD: 123
+
+networks:
+  bin-network:
+    name: bin-network
