@@ -5,10 +5,10 @@ banco funcionando.</p>
 em equipe.</p>
 <h2>Comandos</h2>
 <p>Na raiz do projeto execute: <b>docker-compose up</b></p>
-<p>Após usar esse comando você ja pode acessar o end-points livremente.</p>
+<p>Após usar esse comando você ja pode acessar os end-points livremente.</p>
 
 <h2>Acesso a documentação </h2>
-<p>Essa Aplicação contém uma documentação geral usando a biblioteca Swagger. Para acessá-la basta Iniciar a aplicação e acessar o seguinte link no navegador (enquanto a aplicação está rodando):</p>
+<p>Essa Aplicação contém uma documentação geral usando a biblioteca Swagger. Para acessá-la basta iniciar a aplicação e acessar o seguinte link no navegador (enquanto a aplicação está rodando):</p>
 <p><b>http://localhost:8080/swagger-ui/index.html#/</b></p>
 
 <h2>Observação</h2>
