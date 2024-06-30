@@ -1,6 +1,6 @@
 <h1>Como iniciar</h1>
 <p>Essa aplicação foi feita com integração a um banco de dados Postgres. Logo, para funcionar é necessária a existência de um
-banco funcionando devidamente.</p>
+banco funcionando.</p>
 <p>Porém, para evitar tamanho trabalho. Esse projeto foi feito utilizando o Docker que facilita a utilizando de um aplicação 
 em equipe.</p>
 <h2>Comandos</h2>
